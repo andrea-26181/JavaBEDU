@@ -1,0 +1,42 @@
+//Para R1.S1 paso 5
+
+/*
+Crea un archivo llamado Principal y dentro del método main():
+    Crea un objeto de tipo Paciente
+    Asigna los valores ingresados por el usuario
+    Llama al método mostrarInformacion() para mostrar los datos en consola
+ */
+
+//Es recomendable organizar los códigos dentro de paquetes o package
+package Solucion_Reto_01;
+
+import java.util.Scanner; //Scanner es para solicitar los datos desde la consola
+
+public class Principal {
+
+    // Método main donde se solicita la información al usuario
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Crear un objeto de tipo Paciente
+        Paciente paciente1 = new Paciente();
+
+        // Solicitar y asignar los datos ingresados por el usuario
+        System.out.print("Ingresa el nombre del paciente: ");
+        paciente1.nombre = scanner.nextLine();
+
+        System.out.print("Ingresa la edad: ");
+        paciente1.edad = scanner.nextInt();
+        scanner.nextLine(); // Limpiar el buffer
+
+        System.out.print("Ingresa el número de expediente: ");
+        paciente1.numeroExpediente = scanner.nextLine();
+
+        // Mostrar los datos ingresados
+        paciente1.mostrarInformacion();
+
+        // Cerrar el scanner
+        scanner.close();
+    }
+
+}
